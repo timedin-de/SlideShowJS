@@ -1,0 +1,91 @@
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+
+
+.slideshow {
+	position: relative;
+	display: inline-block;
+	border: thick solid black;
+	overflow: hidden;
+	
+
+
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently*/
+}
+.content {
+	display: flex;
+}
+.slideshow .content * {
+	width:  100%;
+	height:100%;
+	object-fit: scale-down;
+	margin: 0px;
+}
+.slideshow .content-mov-wrapper {
+	display:  inline-flex;
+
+	left: 0px;
+	top: 0px;
+	transition: left 300ms,top 300ms;
+	position: relative;
+}
+.slideshow .slide-controlls {
+	opacity: 0;
+	z-index: 10;
+	font-size: 15px;
+	color:  white;
+	transition: opacity 2s ease-in;
+	height:100%;
+	width: 100%;
+	position:absolute;
+
+	cursor:pointer;
+	pointer-events:pointer;
+}
+
+
+
+.slideshow:hover .slide-controlls {
+	transition: opacity 200ms;
+	opacity: 1;
+}
+.slideShow-controllForw, .slideShow-controllBack {
+	top: 50%;
+	transform: translate(0,-50%);
+	position: absolute;
+}
+.slideshow.vertical .slideShow-controllForw, .slideshow.vertical .slideShow-controllBack {
+	left: 50%;
+	transform: translate(-50%,-50%) rotate(90deg);
+	position: absolute;
+}
+.slide-controlls img {
+	display: block;
+	width: 50px;
+}
+
+.slideShow-controllBack {
+	left: 0px;
+}
+.slideshow:not(.vertical) .slideShow-controllForw {
+	right: 0px;
+}
+
+.slideshow.vertical .slideShow-controllForw {
+	top: 100%;
+	margin-top: -30px;
+}
+.slideshow.vertical .slideShow-controllBack {
+	top: 0%;
+	margin-top: 30px;
+}
