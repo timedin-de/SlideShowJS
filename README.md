@@ -1,4 +1,4 @@
-#SlideshowJS
+# SlideshowJS
 
 Simple JS Lib for creating a slideshow for content (like images).
 
